@@ -1,17 +1,19 @@
 """
-python_template.py
+shell2llm.py - A simple python script to send llama3 questions
 """
 import sys
 import json
 import requests
 
 def get_question():
+    """ Ask llama3 a question """
     if len(sys.argv) > 1:
         return sys.argv[1]
     else:
         return input("Ask me anything: ")
 
 def create_payload(question):
+    """ create the payload"""
     return {
         "model": "llama3",
         "prompt": question,
